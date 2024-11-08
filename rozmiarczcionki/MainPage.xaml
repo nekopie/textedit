@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="rozmiarczcionki.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label x:Name="Rozm" Text="Rozmiar Czcionki: 10"/>
+            <Slider x:Name="RozmSlider"  Minimum="5" Maximum="50" Value="10" ValueChanged="SlidSizeChanged"/>
+            <Label x:Name="Probny" Text="Napis probny" FontSize="10" TextColor="Black"/>
+            <Button
+                x:Name="ColorBtn"
+                Text="Zmien kolor czcionki" 
+                Clicked="OnColorClicked"
+                HorizontalOptions="Fill" />
+            <Label Text="Położenie napisu:"/>
+            <HorizontalStackLayout>
+                <RadioButton x:Name="Left" GroupName="Polozenie" CheckedChanged="OnTextAlignChanged">
+                    <RadioButton.Content>
+                        <Label Text="lewo"/>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton x:Name="Center" GroupName="Polozenie" CheckedChanged="OnTextAlignChanged">
+                    <RadioButton.Content>
+                        <Label Text="srodek"/>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton x:Name="Right" GroupName="Polozenie" CheckedChanged="OnTextAlignChanged">
+                    <RadioButton.Content>
+                        <Label Text="prawo"/>
+                    </RadioButton.Content>
+                </RadioButton>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
